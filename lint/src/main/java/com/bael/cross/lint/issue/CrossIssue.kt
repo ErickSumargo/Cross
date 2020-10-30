@@ -15,6 +15,7 @@ import com.bael.cross.lint.detector.InitBlockDetector
 import com.bael.cross.lint.detector.NamedArgumentDetector
 import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
+import com.bael.cross.lint.detector.OpenModifierDetector
 import com.bael.cross.lint.detector.PublicMethodDetector
 import com.bael.cross.lint.detector.UtilsNamingDetector
 
@@ -109,6 +110,19 @@ val ISSUE_INIT_BLOCK = create(
     severity = WARNING,
     implementation = Implementation(
         InitBlockDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_OPEN_MODIFIER = create(
+    id = "OpenModifier",
+    briefDescription = "A Class is Either Final or Abstract",
+    explanation = "open modifier detected. See why and fix suggestion here (10): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-2-426084b9c9a1",
+    category = USABILITY,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        OpenModifierDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

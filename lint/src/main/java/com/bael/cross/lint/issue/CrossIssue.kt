@@ -3,11 +3,13 @@
 package com.bael.cross.lint.issue
 
 import com.android.tools.lint.detector.api.Category.Companion.COMPLIANCE
+import com.android.tools.lint.detector.api.Category.Companion.CORRECTNESS
 import com.android.tools.lint.detector.api.Category.Companion.PERFORMANCE
 import com.android.tools.lint.detector.api.Implementation
 import com.android.tools.lint.detector.api.Issue.Companion.create
 import com.android.tools.lint.detector.api.Scope.Companion.JAVA_FILE_SCOPE
 import com.android.tools.lint.detector.api.Severity.WARNING
+import com.bael.cross.lint.detector.DestructuringDeclarationDetector
 import com.bael.cross.lint.detector.NamedArgumentDetector
 import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
@@ -51,6 +53,19 @@ val ISSUE_NESTED_CONDITION = create(
     severity = WARNING,
     implementation = Implementation(
         NestedConditionDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_DESTRUCTURING_DECLARATION = create(
+    id = "DestructuringDeclaration",
+    briefDescription = "Destructuring Declaration? Not even once",
+    explanation = "Destructuring declaration detected. See why and fix suggestion here (5): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-1-9a938f3768ad",
+    category = CORRECTNESS,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        DestructuringDeclarationDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

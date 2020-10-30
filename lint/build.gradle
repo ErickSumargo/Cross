@@ -1,10 +1,18 @@
 def plugins = [
     "com.android.lint",
-    "kotlin"
+    "kotlin",
+    "jacoco"
 ]
 
 plugins.forEach { plugin ->
     apply plugin: plugin
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = false
+    }
 }
 
 def deps = [

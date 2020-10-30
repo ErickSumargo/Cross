@@ -1,0 +1,22 @@
+language: android
+jdk: oraclejdk8
+
+android:
+  components:
+    - tools
+    - platform-tools
+
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+
+before_install:
+  - yes | sdkmanager "platforms;android-29"
+  - yes | sdkmanager "build-tools;29.0.3"
+
+script:
+  - ./gradlew test
+  - ./gradlew jacocoTestReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

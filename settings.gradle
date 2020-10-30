@@ -1,0 +1,9 @@
+rootProject.name = "Cross"
+
+def modules = [
+    "app"
+]
+
+modules.forEach { module ->
+    include ":$module"
+}

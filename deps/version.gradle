@@ -1,0 +1,20 @@
+ext {
+    sdk = [
+        build               : '29.0.3',
+        code                : 1,
+        compile             : 29,
+        gradle              : '4.0.0',
+        min                 : '23',
+        target              : 29,
+        version             : '1.0'
+    ]
+
+    deps = [
+        // androidx
+        appcompat           : '1.1.0',
+        constraintlayout    : '1.1.3',
+
+        // kotlin
+        kotlin              : '1.4.0'
+    ]
+}

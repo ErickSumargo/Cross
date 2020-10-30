@@ -14,6 +14,7 @@ import com.bael.cross.lint.detector.DestructuringDeclarationDetector
 import com.bael.cross.lint.detector.NamedArgumentDetector
 import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
+import com.bael.cross.lint.detector.PublicMethodDetector
 import com.bael.cross.lint.detector.UtilsNamingDetector
 
 /**
@@ -81,6 +82,19 @@ val ISSUE_UTILS_NAMING = create(
     severity = WARNING,
     implementation = Implementation(
         UtilsNamingDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_PUBLIC_METHOD = create(
+    id = "PublicMethod",
+    briefDescription = "Public Methods as API Contracts",
+    explanation = "Public method(s) detected. See why and fix suggestion here (7): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-2-426084b9c9a1",
+    category = USABILITY,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        PublicMethodDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

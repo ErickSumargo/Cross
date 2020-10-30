@@ -17,6 +17,7 @@ import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
 import com.bael.cross.lint.detector.OpenModifierDetector
 import com.bael.cross.lint.detector.PublicMethodDetector
+import com.bael.cross.lint.detector.TemporalCouplingDetector
 import com.bael.cross.lint.detector.UtilsNamingDetector
 
 /**
@@ -123,6 +124,19 @@ val ISSUE_OPEN_MODIFIER = create(
     severity = WARNING,
     implementation = Implementation(
         OpenModifierDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_TEMPORAL_COUPLING = create(
+    id = "TemporalCoupling",
+    briefDescription = "The Temporal Coupling",
+    explanation = "Potential temporal coupling (mutable variable) detected. See why and fix suggestion here (11): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-2-426084b9c9a1",
+    category = COMPLIANCE,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        TemporalCouplingDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

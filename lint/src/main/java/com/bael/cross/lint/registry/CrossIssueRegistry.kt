@@ -10,6 +10,7 @@ import com.bael.cross.lint.issue.ISSUE_NESTED_CONDITION
 import com.bael.cross.lint.issue.ISSUE_NULLABLE_PRIMITIVE
 import com.bael.cross.lint.issue.ISSUE_OPEN_MODIFIER
 import com.bael.cross.lint.issue.ISSUE_PUBLIC_METHOD
+import com.bael.cross.lint.issue.ISSUE_TEMPORAL_COUPLING
 import com.bael.cross.lint.issue.ISSUE_UTILS_NAMING
 
 /**
@@ -29,6 +30,7 @@ class CrossIssueRegistry : IssueRegistry() {
             ISSUE_UTILS_NAMING,
             ISSUE_PUBLIC_METHOD,
             ISSUE_INIT_BLOCK,
-            ISSUE_OPEN_MODIFIER
+            ISSUE_OPEN_MODIFIER,
+            ISSUE_TEMPORAL_COUPLING
         )
 }

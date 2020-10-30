@@ -7,6 +7,7 @@ import com.bael.cross.lint.issue.ISSUE_DESTRUCTURING_DECLARATION
 import com.bael.cross.lint.issue.ISSUE_NAMED_ARGUMENT
 import com.bael.cross.lint.issue.ISSUE_NESTED_CONDITION
 import com.bael.cross.lint.issue.ISSUE_NULLABLE_PRIMITIVE
+import com.bael.cross.lint.issue.ISSUE_PUBLIC_METHOD
 import com.bael.cross.lint.issue.ISSUE_UTILS_NAMING
 
 /**
@@ -23,6 +24,7 @@ class CrossIssueRegistry : IssueRegistry() {
             ISSUE_NAMED_ARGUMENT,
             ISSUE_NESTED_CONDITION,
             ISSUE_DESTRUCTURING_DECLARATION,
-            ISSUE_UTILS_NAMING
+            ISSUE_UTILS_NAMING,
+            ISSUE_PUBLIC_METHOD
         )
 }

@@ -16,7 +16,9 @@ abstract class IssueHandlerTest(
     private val detector: IssueDetector
 ) : LintDetectorTest() {
     protected val issueId: String = issue.id
+
     protected val issueDescription: String = issue.defaultSeverity.description
+
     protected val issueExplanation: String = issue.getExplanation(TEXT)
 
     override fun getDetector(): Detector {

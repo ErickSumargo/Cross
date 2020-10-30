@@ -5,6 +5,7 @@ package com.bael.cross.lint.issue
 import com.android.tools.lint.detector.api.Category.Companion.COMPLIANCE
 import com.android.tools.lint.detector.api.Category.Companion.CORRECTNESS
 import com.android.tools.lint.detector.api.Category.Companion.PERFORMANCE
+import com.android.tools.lint.detector.api.Category.Companion.USABILITY
 import com.android.tools.lint.detector.api.Implementation
 import com.android.tools.lint.detector.api.Issue.Companion.create
 import com.android.tools.lint.detector.api.Scope.Companion.JAVA_FILE_SCOPE
@@ -13,6 +14,7 @@ import com.bael.cross.lint.detector.DestructuringDeclarationDetector
 import com.bael.cross.lint.detector.NamedArgumentDetector
 import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
+import com.bael.cross.lint.detector.UtilsNamingDetector
 
 /**
  * Created by ericksumargo on 01/10/20.
@@ -66,6 +68,19 @@ val ISSUE_DESTRUCTURING_DECLARATION = create(
     severity = WARNING,
     implementation = Implementation(
         DestructuringDeclarationDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_UTILS_NAMING = create(
+    id = "UtilsNaming",
+    briefDescription = "It's XUtils",
+    explanation = "Improper Util(s) naming detected. See why and fix suggestion here (6): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-1-9a938f3768ad",
+    category = USABILITY,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        UtilsNamingDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

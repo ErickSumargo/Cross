@@ -1,0 +1,7 @@
+dependencies {
+    compileOnly "com.android.tools.lint:lint-api:$deps.lint"
+    compileOnly "com.android.tools.lint:lint-checks:$deps.lint"
+
+    testImplementation "com.android.tools.lint:lint:$deps.lint"
+    testImplementation "com.android.tools.lint:lint-tests:$deps.lint"
+}

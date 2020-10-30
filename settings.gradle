@@ -1,7 +1,8 @@
 rootProject.name = "Cross"
 
 def modules = [
-    "app"
+    "app",
+    "lint"
 ]
 
 modules.forEach { module ->

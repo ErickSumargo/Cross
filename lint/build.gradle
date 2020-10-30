@@ -1,0 +1,17 @@
+def plugins = [
+    "com.android.lint",
+    "kotlin"
+]
+
+plugins.forEach { plugin ->
+    apply plugin: plugin
+}
+
+def deps = [
+    "kotlin",
+    "lint"
+]
+
+deps.forEach { dep ->
+    apply from: "$rootDir/deps/${dep}.gradle"
+}

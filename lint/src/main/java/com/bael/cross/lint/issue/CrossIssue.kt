@@ -10,7 +10,11 @@ import com.android.tools.lint.detector.api.Implementation
 import com.android.tools.lint.detector.api.Issue.Companion.create
 import com.android.tools.lint.detector.api.Scope.Companion.JAVA_FILE_SCOPE
 import com.android.tools.lint.detector.api.Severity.WARNING
-import com.bael.cross.lint.detector.*
+import com.bael.cross.lint.detector.DestructuringDeclarationDetector
+import com.bael.cross.lint.detector.NamedArgumentDetector
+import com.bael.cross.lint.detector.NestedConditionDetector
+import com.bael.cross.lint.detector.NullablePrimitiveDetector
+import com.bael.cross.lint.detector.UtilsNamingDetector
 
 /**
  * Created by ericksumargo on 01/10/20.

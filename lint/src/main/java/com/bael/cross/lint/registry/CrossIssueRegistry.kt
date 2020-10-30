@@ -4,6 +4,7 @@ import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.detector.api.CURRENT_API
 import com.android.tools.lint.detector.api.Issue
 import com.bael.cross.lint.issue.ISSUE_DESTRUCTURING_DECLARATION
+import com.bael.cross.lint.issue.ISSUE_INIT_BLOCK
 import com.bael.cross.lint.issue.ISSUE_NAMED_ARGUMENT
 import com.bael.cross.lint.issue.ISSUE_NESTED_CONDITION
 import com.bael.cross.lint.issue.ISSUE_NULLABLE_PRIMITIVE
@@ -25,6 +26,7 @@ class CrossIssueRegistry : IssueRegistry() {
             ISSUE_NESTED_CONDITION,
             ISSUE_DESTRUCTURING_DECLARATION,
             ISSUE_UTILS_NAMING,
-            ISSUE_PUBLIC_METHOD
+            ISSUE_PUBLIC_METHOD,
+            ISSUE_INIT_BLOCK
         )
 }

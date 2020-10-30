@@ -11,6 +11,7 @@ import com.android.tools.lint.detector.api.Issue.Companion.create
 import com.android.tools.lint.detector.api.Scope.Companion.JAVA_FILE_SCOPE
 import com.android.tools.lint.detector.api.Severity.WARNING
 import com.bael.cross.lint.detector.DestructuringDeclarationDetector
+import com.bael.cross.lint.detector.InitBlockDetector
 import com.bael.cross.lint.detector.NamedArgumentDetector
 import com.bael.cross.lint.detector.NestedConditionDetector
 import com.bael.cross.lint.detector.NullablePrimitiveDetector
@@ -95,6 +96,19 @@ val ISSUE_PUBLIC_METHOD = create(
     severity = WARNING,
     implementation = Implementation(
         PublicMethodDetector::class.java,
+        JAVA_FILE_SCOPE
+    )
+)
+
+val ISSUE_INIT_BLOCK = create(
+    id = "InitBlock",
+    briefDescription = "Constructors Should Be Code-Free",
+    explanation = "init block detected. See why and fix suggestion here (9): https://proandroiddev.com/personal-request-changes-materials-starter-pack-kotlin-ver-part-2-426084b9c9a1",
+    category = PERFORMANCE,
+    priority = 10,
+    severity = WARNING,
+    implementation = Implementation(
+        InitBlockDetector::class.java,
         JAVA_FILE_SCOPE
     )
 )

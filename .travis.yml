@@ -13,10 +13,14 @@ android:
 before_install:
   - yes | sdkmanager "platforms;android-29"
   - yes | sdkmanager "build-tools;29.0.3"
+  - gem install bundler
+  - bundle install
 
 script:
   - ./gradlew test
   - ./gradlew jacocoTestReport
+  - ./gradlew demo:lintDebug
+  - bundle exec danger
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

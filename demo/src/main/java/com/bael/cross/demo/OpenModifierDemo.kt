@@ -13,12 +13,6 @@ class OpenModifierDemo {
 
     open class TextRandom(val random: RandomGenerator) {
 
-        /**
-         * ...
-         *
-         * Some internal methods utilize the "generate" method.
-         */
-
         open fun generate(length: Int): String {
             return random.generate(length)
         }

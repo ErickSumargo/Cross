@@ -22,7 +22,7 @@ android {
         abortOnError false
         textReport true
 
-        check 'NullablePrimitive', 'NamedArgument', 'NestedCondition', 'DestructuringDeclaration', 'UtilsNaming', 'PublicMethod', 'InitBlock'
+        check 'NullablePrimitive', 'NamedArgument', 'NestedCondition', 'DestructuringDeclaration', 'UtilsNaming', 'PublicMethod', 'InitBlock', 'OpenModifier'
     }
 }
 

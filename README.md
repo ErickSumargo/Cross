@@ -62,6 +62,11 @@ A recap (not all should be implemented tho):
 [UT](https://github.com/ErickSumargo/Cross/blob/main/lint/src/test/java/com/bael/cross/lint/handler/TemporalCouplingHandlerTest.kt)<br/>
 [Result](https://github.com/ErickSumargo/Cross/pull/25)
 
+## Screenshot
+Including real-time inspection 🤩
+
+[<img src="assets/real-time.png">]()
+
 ## ⚠️ Disclaimer ⚠️
 This project **should only be used** for research purpose. 
 Plug those lints into your codebase is discouraged unless you do really understand why and how they react to corresponding issue.
